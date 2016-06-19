@@ -1,0 +1,29 @@
+.short-info h2 {font-size: 18px;margin-top: 0;margin-bottom: 10px;}
+.project-img {margin-bottom: 10px;}
+.nomargin {margin: 0;}
+#getting-started {display: inline-block;font-size: 25px;}
+.panel-project{
+	background: rgb(221, 221, 221);
+
+}
+.project-table
+{
+	width: 100%;
+
+}
+.project-table td, .project-table th{
+	text-align: center;
+}
+
+.project-table th, .project-table td{
+	text-align: center;
+    background: whitesmoke;
+    margin: 2px;
+    display: inline-block;
+    padding: 5px;
+    width: 86px;
+}
+.read-more {
+	margin-top: 8px;
+	border-radius: 0px !important;
+}
