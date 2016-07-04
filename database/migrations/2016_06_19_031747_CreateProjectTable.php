@@ -17,18 +17,15 @@ class CreateProjectTable extends Migration
             $table->string('title');
             $table->text('details');
             $table->timestamps('date');
-           
         });
-
         DB::statement('ALTER TABLE projects ADD FULLTEXT search(title)');
-
     }
-
     /**
      * Reverse the migrations.
      *
      * @return void
      */
+    
     public function down()
     {
       Schema::table('projects', function($table) {

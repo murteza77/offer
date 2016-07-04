@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-            
 use App\projects;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
@@ -136,18 +133,11 @@ class ProjectController extends Controller
         return \Redirect::route('ListProject')->with('message','The project is deleted successfully');
     }
 
-public function postSearch()
-
+    public function postSearch()
     {
-    $q = Input::get('query');
-    $searchTerms = explode(' ', $q);
-    $query = DB::table('projects');
-    foreach($searchTerms as $term)
-    {
-        $query->where('title', 'LIKE', '%'. $term .'%')->first();
-    }
-    $result = $query->get();
+        $q = Input::get('search');
+        $result = Projects::where('title', 'LIKE', '%'. $q .'%')->get();
+     
         return view('show', ['result'=> $result]);
     }
-    
-}
+ }

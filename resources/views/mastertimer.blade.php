@@ -1,11 +1,12 @@
 @extends('layoute')
 @section('content')
-<div class="search" style="padding-top: 30px">
+<div class="jumbotron" style="height: 100px">
+	<div class="container">
+		<div id="wrap">
 
 	    {{ Form::model(null, array('route' => array('projects.search'))) }}
-
-	    {{ Form::text('query', null, array( 'placeholder' => 'Search query...' )) }}
-
+	    {{ Form::text('query', null, array( 'placeholder' => 'Search query...', 'name'=>'search' )) }}
+		<input id="search_submit" value="Rechercher" type="submit">
 	    {{ Form::submit('Search') }}
 	    {{ Form::close() }}
 
@@ -13,7 +14,6 @@
 
 	</div>
 </div> 
-
 @foreach($projectList as $project)
 <div class="col-sm-6">
 	<div class="panel panel-project ">
