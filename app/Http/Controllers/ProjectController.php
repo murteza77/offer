@@ -139,20 +139,14 @@ class ProjectController extends Controller
 public function postSearch()
 
     {
-
     $q = Input::get('query');
-
     $searchTerms = explode(' ', $q);
-
     $query = DB::table('projects');
-
     foreach($searchTerms as $term)
     {
         $query->where('title', 'LIKE', '%'. $term .'%')->first();
     }
-
     $result = $query->get();
-
         return view('show', ['result'=> $result]);
     }
     
