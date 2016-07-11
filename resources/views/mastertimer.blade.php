@@ -5,7 +5,7 @@
 		<div id="wrap">
 
 	    {{ Form::model(null, array('route' => array('projects.search'))) }}
-	    {{ Form::text('query', null, array( 'placeholder' => 'Search query...', 'name'=>'search' )) }}
+	    {{ Form::text('query', null, array( 'placeholder' => 'Search ...', 'name'=>'search' )) }}
 		<input id="search_submit" value="Rechercher" type="submit">
 	    {{ Form::submit('Search') }}
 	    {{ Form::close() }}

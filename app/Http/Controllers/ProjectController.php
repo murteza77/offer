@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use DB;
 class ProjectController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -135,9 +136,13 @@ class ProjectController extends Controller
 
     public function postSearch()
     {
-        $q = Input::get('search');
+        $q = Input::get('search'); 
         $result = Projects::where('title', 'LIKE', '%'. $q .'%')->get();
-     
-        return view('show', ['result'=> $result]);
+       if (!$result->isEmpty()) 
+         return view('show', ['result'=> $result]);
+
+     else
+        return "The project is not found does not exist ";
+               
     }
  }

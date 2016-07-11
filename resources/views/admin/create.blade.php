@@ -86,14 +86,6 @@
             {!! Form::text('date', old('date'),['class' => 'form-control', 'id'=>'date','name'=>'date']) !!}
           </div>
 
-
-
-
-
-
-
-
-
           {!! Form::submit('Save', ['class' => 'btn btn-primary   ']) !!}
           {!! Form::close() !!}
           <script>

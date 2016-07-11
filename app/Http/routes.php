@@ -12,9 +12,8 @@
 */
 
 
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/low', function () {
+    return view('test');
 });
 Route::post(
 	    'projects/search', 
@@ -33,6 +32,11 @@ Route::post(
         $this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
         $this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
         $this->post('password/reset', 'Auth\PasswordController@reset');
+
+
+
+// list of users:
+
 
 // Route::get('/home', 'HomeController@index');
 
@@ -55,3 +59,5 @@ Route::group(['prefix' => 'project', 'middleware' => 'auth'], function () {
 	Route::get('{id}',				['as'	=>'showProject', 			'uses'=> 'ProjectController@show']);
 	Route::DELETE('{id}',           ['as'   => 'deleteProject',			'uses'=> 'ProjectController@destroy']);	
 });
+
+

@@ -17,6 +17,7 @@ class CreateProjectTable extends Migration
             $table->string('title');
             $table->text('details');
             $table->timestamps('date');
+            $table->softDeletes(); 
         });
         DB::statement('ALTER TABLE projects ADD FULLTEXT search(title)');
     }
